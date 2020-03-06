@@ -22,7 +22,6 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border: 1px solid;
   margin: 0 2px;
 }
 
@@ -242,6 +241,7 @@ h2 {
   border-bottom: 1px solid #9e9e9e20;
   padding-bottom: 13px;
   margin-bottom: 13px;
+  padding-bottom: 0;
 }
 
 .header__item {
@@ -257,7 +257,7 @@ h2 {
   height: 24px;
   width: 19px;
   background: url(../assets/icon/leaf-arrow-icon.png) no-repeat;
-  margin: 23px 8px;
+  margin: 18px 8px;
 }
 
 .header__item--add-book {
