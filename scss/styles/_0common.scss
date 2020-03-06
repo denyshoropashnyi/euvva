@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all .2s ease-in-out;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Open Sans';
+    color: $content-font-color;
+    background-color: $main-bg-color;
+}
+
+.wrapper {
+    height: 100%;
+    display: flex;
+    border: 1px solid;
+    margin: 0 2px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+input {
+    cursor: pointer;
+}
+
+h1,
+h2 {
+    font-family: 'Nunito';
+    font-weight: 600;
+    color: $headings-color;
+    // line-height: 60px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}

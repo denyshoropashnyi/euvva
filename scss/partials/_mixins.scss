@@ -1,0 +1,17 @@
+@mixin sprite ($width, $height, $x, $y) {
+    background: url(../assets/sprite/sprite.sprite.png) no-repeat $x $y;
+    width: $width;
+    height: $height;
+    filter: invert(1);
+}
+
+@mixin underline-content($color) {
+    border-bottom: 1px solid $color;
+    padding-bottom: 13px;
+    margin-bottom: 13px;
+}
+
+@mixin overline-content($color) {
+    border-top: 1px solid $color;
+    padding-top: 13px;
+}

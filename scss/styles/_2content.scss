@@ -1,0 +1,173 @@
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    &__container {
+        display: flex;
+    }
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    @include underline-content(#9e9e9e20);
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+.header__item {
+    &--back {
+        height: 24px;
+        width: 19px;
+        background: url(../assets/icon/leaf-arrow-icon.png) no-repeat;
+        margin: 23px 8px;
+    }
+
+    &--add-book {
+        height: 24px;
+        width: 24px;
+        background: url(../assets/icon/single-book-icon.png) no-repeat;
+        margin: 18px 8px;
+    }
+
+    &--add-all {
+        height: 24px;
+        width: 24px;
+        background: url(../assets/icon/group-book-icon.png) no-repeat;
+        margin: 18px 8px;
+    }
+
+    &--find {
+        height: 24px;
+        width: 160px;
+        border: 1px solid #000000;
+        border-radius: 1px;
+        background-color: $main-bg-color;
+        margin: 18px 8px;
+        padding: 0 10px;
+    }
+
+    &--info {
+        height: 24px;
+        width: 24px;
+        border: 1px solid $content-font-color;
+        font-size: 18px;
+        font-weight: 600;
+        border-radius: 50%;
+        margin: 15px 8px;
+    }
+
+    &--show {
+        height: 56px;
+        width: 24px;
+        background: url(../assets/icon/show-logo.png) 50% 50% no-repeat;
+        margin: 0 8px;
+    }
+
+    &--notification {
+        width: 30px;
+        height: 30px;
+        background: url(../assets/icon/bell-logo.png) 50% 50% no-repeat;
+        background-color: $notification-bg-color;
+        border: 1px solid white;
+        border-radius: 50%;
+        margin: 16px 8px 10px;
+    }
+
+    &--current-user {
+        width: 30px;
+        height: 30px;
+        background-color: $current-user-bg-color;
+        border-radius: 50%;
+        color: white;
+        margin: 15px 8px 8px;
+    }
+}
+
+.subheader {
+    &__container {
+        display: flex;
+        align-items: center;
+        @include underline-content(#9e9e9e20);
+    }
+}
+
+.subheader__logo {
+    &--calendar {
+        @include sprite(50px, 21px, calc(50% + 10px), -110px);
+        filter: invert(0);
+    }
+
+    &--reports {
+        @include sprite(50px, 21px, calc(50% + 10px), -385px);
+        filter: invert(0);
+    }
+
+    &--staff {
+        @include sprite(50px, 19px, calc(50% + 10px), -339px);
+        filter: invert(0);
+    }
+
+    &--tasks {
+        @include sprite(50px, 23px, calc(50% + 10px), -311px);
+        filter: invert(0);
+    }
+}
+
+.reminders {
+    width: 278px;
+    min-height: 355px;
+    box-shadow: 0 4px 10px rgba(124, 124, 124, 0.2);
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding: 23px 34px 23px 24px;
+
+    // &__heading {}
+
+    &__raw {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 29px 0px;
+    }
+
+    &__text {
+        width: 162px;
+        font-family: 'Nunito';
+        font-size: 18px;
+        font-weight: 300;
+        color: $content-font-color;
+    }
+
+    &__link {
+        width: 19px;
+        height: 16px;
+        background: url(../assets/icon/leaf-arrow-icon.png) no-repeat;
+        transform: rotateY(180deg);
+    }
+}
+
+
+
+
+
+
+
+
+// .timeline {
+
+//     &__title {
+//         width: 251px;
+//         display: flex;
+//         justify-content: space-between;
+//         // font-size: ;
+//         background-color: white;
+//         padding: 15px;
+
+//     }
+// }

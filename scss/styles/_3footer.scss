@@ -1,0 +1,34 @@
+.footer {
+    @include overline-content(#9e9e9e20);
+    padding: 13px;
+
+    &__container {
+        display: flex;
+    }
+
+    &__company {
+        flex: 1;
+
+        a {
+            font-size: 14px;
+            font-weight: 300;
+            color: #000000;
+            opacity: 0.5;
+        }
+    }
+
+    &__links {
+        display: flex;
+    }
+
+    &__link {
+        margin: 0 20px;
+
+        a {
+            font-size: 14px;
+            font-weight: 300;
+            color: #000000;
+            opacity: 0.5;
+        }
+    }
+}

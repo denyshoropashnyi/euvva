@@ -1,0 +1,30 @@
+{
+   "style_name": "sprite",
+   "images": [
+      "..\\icon\\access-logo.png",
+      "..\\icon\\add-logo.png",
+      "..\\icon\\archive-logo.png",
+      "..\\icon\\calendar-logo.png",
+      "..\\icon\\cash-logo.png",
+      "..\\icon\\client-logo.png",
+      "..\\icon\\conpany-logo.png",
+      "..\\icon\\download-logo.png",
+      "..\\icon\\edit-logo.png",
+      "..\\icon\\help-logo.png",
+      "..\\icon\\print-logo.png",
+      "..\\icon\\reports-logo.png",
+      "..\\icon\\staff-logo.png",
+      "..\\icon\\store-logo.png",
+      "..\\icon\\tasks-logo.png",
+      "..\\icon\\tools-logo.png"
+   ],
+   "orientation": "vertical",
+   "padding": 5,
+   "custom_styles": {
+      "display": "inline-block"
+   },
+   "stylesheet": "css",
+   "path_prefix": "",
+   "output": "png",
+   "enable_cache_busting": true
+}
