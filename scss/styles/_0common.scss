@@ -49,22 +49,12 @@ h2 {
     font-size: 20px;
 }
 
-.hidden {
-    display: none;
-}
-
-// .show {
-//     display: block;
-// }
-
 .burger {
     position: relative;
     width: 23px;
     height: 100%;
     margin-right: 20px;
     cursor: pointer;
-    z-index: 999;
-    border: 3px solid;
 
     &::before,
     &::after {
@@ -85,9 +75,13 @@ h2 {
 
     span {
         position: absolute;
-        background-color: $burger-color;
         width: 23px;
         height: 2px;
+        background-color: $burger-color;
         top: calc(50% - 5px);
     }
+}
+
+.hidden {
+    display: none;
 }

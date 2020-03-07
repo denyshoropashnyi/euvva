@@ -1,7 +1,11 @@
 .aside {
+    width: 52px;
     background-color: $aside-bg-color;
-    width: 100px;
     margin: 0 8px;
+
+    &--wider {
+        width: 100px;
+    }
 }
 
 .aside-nav__text {
@@ -32,8 +36,15 @@
     &__footer {
         width: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
+        align-items: center;
         @include overline-content(#ffffff20);
+
+        &--row {
+            flex-direction: row;
+            align-items: center;
+        }
 
         .aside-nav__container {
             margin: 10px 0;
