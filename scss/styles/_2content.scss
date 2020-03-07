@@ -65,9 +65,13 @@
 
     &--show {
         height: 56px;
-        width: 24px;
+        width: 40px;
         background: url(../assets/icon/show-logo.png) 50% 50% no-repeat;
         margin: 0 8px;
+    }
+
+    &--active {
+        background-color: #c6c6c6;
     }
 
     &--notification {
@@ -91,6 +95,10 @@
 }
 
 .subheader {
+    &--hidden {
+        display: none;
+    }
+
     &__container {
         display: flex;
         align-items: center;

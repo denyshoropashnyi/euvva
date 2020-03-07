@@ -5,8 +5,8 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 1.2s ease-in-out;
+  transition: all 1.2s ease-in-out;
 }
 
 html,
@@ -51,6 +51,10 @@ h1 {
 
 h2 {
   font-size: 20px;
+}
+
+.hidden {
+  display: none;
 }
 
 .aside {
@@ -172,7 +176,7 @@ h2 {
 }
 
 .aside-nav__logo--store {
-  background: url(../assets/sprite/sprite.sprite.png) no-repeat 50% -363px;
+  background: url(../assets/sprite/sprite.sprite.png) no-repeat calc(50% + 10px) -363px;
   width: 100%;
   height: 17px;
   -webkit-filter: invert(1);
@@ -296,9 +300,13 @@ h2 {
 
 .header__item--show {
   height: 56px;
-  width: 24px;
+  width: 40px;
   background: url(../assets/icon/show-logo.png) 50% 50% no-repeat;
   margin: 0 8px;
+}
+
+.header__item--active {
+  background-color: #c6c6c6;
 }
 
 .header__item--notification {
@@ -318,6 +326,10 @@ h2 {
   border-radius: 50%;
   color: white;
   margin: 15px 8px 8px;
+}
+
+.subheader--hidden {
+  display: none;
 }
 
 .subheader__container {

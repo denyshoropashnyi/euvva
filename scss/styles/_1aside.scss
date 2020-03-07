@@ -72,7 +72,7 @@
     }
 
     &--store {
-        @include sprite(100%, 17px, 50%, -363px);
+        @include sprite(100%, 17px, calc(50% + 10px), -363px);
         filter: invert(0);
     }
 
