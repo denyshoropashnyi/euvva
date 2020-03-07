@@ -16,7 +16,8 @@ body {
 .wrapper {
     height: 100%;
     display: flex;
-    margin: 0 2px;
+    // margin: 0 2px;
+    padding: 0 10px;
 }
 
 a {
@@ -50,4 +51,43 @@ h2 {
 
 .hidden {
     display: none;
+}
+
+// .show {
+//     display: block;
+// }
+
+.burger {
+    position: relative;
+    width: 23px;
+    height: 100%;
+    margin-right: 20px;
+    cursor: pointer;
+    z-index: 999;
+    border: 3px solid;
+
+    &::before,
+    &::after {
+        content: '';
+        background-color: $burger-color;
+        position: absolute;
+        width: 23px;
+        height: 2px;
+    }
+
+    &::before {
+        top: calc(50% - 10px);
+    }
+
+    &::after {
+        top: 50%;
+    }
+
+    span {
+        position: absolute;
+        background-color: $burger-color;
+        width: 23px;
+        height: 2px;
+        top: calc(50% - 5px);
+    }
 }

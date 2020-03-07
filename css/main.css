@@ -22,7 +22,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 2px;
+  padding: 0 10px;
 }
 
 a {
@@ -55,6 +55,40 @@ h2 {
 
 .hidden {
   display: none;
+}
+
+.burger {
+  position: relative;
+  width: 23px;
+  height: 100%;
+  margin-right: 20px;
+  cursor: pointer;
+  z-index: 999;
+  border: 3px solid;
+}
+
+.burger::before, .burger::after {
+  content: '';
+  background-color: #2c3861;
+  position: absolute;
+  width: 23px;
+  height: 2px;
+}
+
+.burger::before {
+  top: calc(50% - 10px);
+}
+
+.burger::after {
+  top: 50%;
+}
+
+.burger span {
+  position: absolute;
+  background-color: #2c3861;
+  width: 23px;
+  height: 2px;
+  top: calc(50% - 5px);
 }
 
 .aside {
@@ -305,7 +339,7 @@ h2 {
   margin: 0 8px;
 }
 
-.header__item--active {
+.header__item--clicked {
   background-color: #c6c6c6;
 }
 
