@@ -50,6 +50,8 @@ const titleInput = document.getElementsByClassName('input--title')[0];
 const textInput = document.getElementsByClassName('input--text')[0];
 
 const addInfoBtn = document.getElementsByClassName('btn--add')[0];
+const resetInfoBtn = document.getElementsByClassName('btn--cancel')[0];
+const saveInfoBtn = document.getElementsByClassName('btn--save')[0];
 
 const template = document.getElementById('template').innerHTML;
 
@@ -63,8 +65,10 @@ function newInfoFormSubmit(e) {
 }
 
 function showInput() {
-    titleInput.classList.toggle('hidden');
-    textInput.classList.toggle('hidden');
+    titleInput.classList.toggle('hide');
+    textInput.classList.toggle('hide');
+    // resetInfoBtn.classList.toggle('hidden');
+    // saveInfoBtn.classList.toggle('hidden');
 }
 
 
@@ -80,7 +84,27 @@ function submitInfo() {
     resetInfoForm();
 }
 
+
 function resetInfoForm() {
     titleInput.value = '';
     textInput.value = '';
 }
+
+
+
+
+
+const reminders = document.getElementsByClassName('reminders')[0];
+const reminderCount = document.getElementsByClassName('reminders__raw').length;
+const notification = document.getElementsByClassName('header__item--notification')[0];
+const bell = document.getElementsByClassName('bell')[0];
+
+notification.addEventListener('click', showRemindersList);
+
+function showRemindersList() {
+    reminders.classList.toggle('hidden');
+    notification.classList.remove('count--animated');
+    bell.classList.remove('bell--animated');
+}
+
+bell.textContent = reminderCount;

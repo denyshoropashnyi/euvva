@@ -98,7 +98,9 @@
                     <div class="header__item--time">11:43 25.02.2020</div>
                     <button class="header__item--info">i</button>
                     <button class="header__item--show"></button>
-                    <button class="header__item--notification"></button>
+                    <button class="header__item--notification count--animated">
+                        <p class="bell bell--animated"></p>
+                    </button>
                     <button class="header__item--current-user">A</button>
                 </div>
             </header>
@@ -150,21 +152,25 @@
                                 <tbody class="info__list">
                                 </tbody>
 
-                                <tfoot>
+                                <tfoot class="info__tfoot">
+                                    <tr>
+                                        <td> <input type="text" class="input--title hide"
+                                                placeholder="введите ваш заголовок">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="input--text hide" placeholder="введите ваш текст">
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td>
-                                            <input type="text" class="input--title" placeholder="введите ваш заголовок">
                                             <button type="button" class="btn--print"></button>
                                             <button type="button" class="btn--download"></button>
                                             <button type="button" class="btn--edit"></button>
                                             <button type="button" class="btn--add"></button>
                                         </td>
                                         <td>
-                                            <input type="text" class="input--text" placeholder="введите ваш текст">
-                                        </td>
-                                        <td>
-                                            <input type="reset" class="btn--cancel hidden" value="Отмена">
-                                            <input type="submit" class="btn--save hidden" value="Сохранить">
+                                            <input type="reset" class="btn--cancel" value="Отмена">
+                                            <input type="submit" class="btn--save" value="Сохранить">
                                         </td>
                                     </tr>
                                 </tfoot>
@@ -179,7 +185,7 @@
                         </script>
                     </div>
 
-                    <div class="reminders">
+                    <div class="reminders hidden">
                         <h2 class="reminders__heading">Напоминание (обуч.)</h2>
                         <ul class="reminders__list">
                             <li class="reminders__raw">

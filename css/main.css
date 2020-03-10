@@ -33,8 +33,10 @@ button {
 }
 
 input {
-  width: 100%;
+  width: 88%;
+  height: 47px;
   cursor: pointer;
+  text-align: center;
 }
 
 h1,
@@ -89,6 +91,10 @@ h2,
 
 .hidden {
   display: none;
+}
+
+.hide {
+  opacity: 0;
 }
 
 .aside {
@@ -365,6 +371,7 @@ h2,
 }
 
 .header__item--notification {
+  position: relative;
   width: 30px;
   height: 30px;
   background: url(../assets/icon/bell-logo.png) 50% 50% no-repeat;
@@ -372,6 +379,21 @@ h2,
   border: 1px solid white;
   border-radius: 50%;
   margin: 16px 8px 10px;
+}
+
+.header__item--notification .bell {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: -11px;
+  right: -5px;
+  border: 1px solid #f7f7f7;
+  border-radius: 50%;
+  background-color: #c03030;
+  color: #ffffff;
+  font-family: "Nunito";
+  font-size: 12px;
+  line-height: 20px;
 }
 
 .header__item--current-user {
@@ -479,8 +501,7 @@ h2,
 }
 
 .info {
-  width: 751px;
-  min-height: 503px;
+  width: 100%;
   border-radius: 5px;
   background-color: #ffffff;
   -webkit-box-shadow: 0 4px 10px rgba(124, 124, 124, 0.2);
@@ -488,20 +509,37 @@ h2,
 }
 
 .info__form td {
-  width: 33%;
+  width: 50%;
+  max-width: 250px;
+  color: #000000;
+  font-size: 16px;
+  line-height: 60px;
+  overflow-wrap: normal;
+  overflow: hidden;
 }
 
 .info__table {
-  width: 100%;
+  width: 90%;
+  margin: 22px 25px;
 }
 
 .info__title {
+  width: 100%;
   text-align: left;
+  padding-left: 25px;
+}
+
+.info__tfoot .input--title,
+.info__tfoot .input--text {
+  border: 1px solid #2e2e2e;
 }
 
 .info__row {
   height: 48px;
-  width: 100px;
+}
+
+.info__row td {
+  padding-left: 49px;
 }
 
 .info__row:nth-child(even) {
@@ -557,6 +595,7 @@ h2,
   border-radius: 1px;
   border: 1px solid #2e2e2e;
   background: none;
+  margin: 0 10px;
 }
 
 .btn--save {
@@ -567,6 +606,7 @@ h2,
   color: #ffffff;
   border-radius: 1px;
   background-color: #3d963c;
+  margin: 0 10px;
 }
 
 .footer {
@@ -609,4 +649,122 @@ h2,
   font-weight: 300;
   color: #000000;
   opacity: 0.5;
+}
+
+@-webkit-keyframes ring {
+  0% {
+    -webkit-transform: rotate(35deg);
+            transform: rotate(35deg);
+  }
+  12.5% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  25% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+  37.5% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  62.5% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes ring {
+  0% {
+    -webkit-transform: rotate(35deg);
+            transform: rotate(35deg);
+  }
+  12.5% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  25% {
+    -webkit-transform: rotate(25deg);
+            transform: rotate(25deg);
+  }
+  37.5% {
+    -webkit-transform: rotate(-20deg);
+            transform: rotate(-20deg);
+  }
+  50% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  62.5% {
+    -webkit-transform: rotate(-10deg);
+            transform: rotate(-10deg);
+  }
+  75% {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@-webkit-keyframes count {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+@keyframes count {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  100% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+}
+
+.bell--animated {
+  -webkit-animation-name: ring;
+          animation-name: ring;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.count--animated {
+  -webkit-animation-name: count;
+          animation-name: count;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
 }

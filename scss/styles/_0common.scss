@@ -30,8 +30,10 @@ button {
 }
 
 input {
-    width: 100%;
+    width: 88%;
+    height: 47px;
     cursor: pointer;
+    text-align: center;
 }
 
 h1,
@@ -85,4 +87,8 @@ h2 {
 
 .hidden {
     display: none;
+}
+
+.hide {
+    opacity: 0;
 }
