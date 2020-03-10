@@ -39,3 +39,48 @@ function burgerHoverTriggerOff() {
         burger.classList.toggle('hidden');
     }
 }
+
+
+
+
+const infoForm = document.getElementsByClassName('info__form')[0];
+const infoList = document.getElementsByClassName('info__list')[0];
+
+const titleInput = document.getElementsByClassName('input--title')[0];
+const textInput = document.getElementsByClassName('input--text')[0];
+
+const addInfoBtn = document.getElementsByClassName('btn--add')[0];
+
+const template = document.getElementById('template').innerHTML;
+
+
+infoForm.addEventListener('submit', newInfoFormSubmit);
+addInfoBtn.addEventListener('click', showInput)
+
+function newInfoFormSubmit(e) {
+    e.preventDefault();
+    submitInfo();
+}
+
+function showInput() {
+    titleInput.classList.toggle('hidden');
+    textInput.classList.toggle('hidden');
+}
+
+
+function submitInfo() {
+    let infoRow;
+    infoRow = document.createElement('tr');
+    infoRow.className = 'info__row';
+    infoRow.innerHTML = template
+        .replace('{{title}}', titleInput.value || '-')
+        .replace('{{text}}', textInput.value || '-');
+    infoList.append(infoRow);
+
+    resetInfoForm();
+}
+
+function resetInfoForm() {
+    titleInput.value = '';
+    textInput.value = '';
+}

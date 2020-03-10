@@ -7,14 +7,14 @@
 
 html,
 body {
-    height: 100%;
+    // height: 100%;
     font-family: 'Open Sans';
     color: $content-font-color;
     background-color: $main-bg-color;
 }
 
 .wrapper {
-    height: 100%;
+    // height: 100%;
     display: flex;
     // margin: 0 2px;
     padding: 0 10px;
@@ -30,6 +30,7 @@ button {
 }
 
 input {
+    width: 100%;
     cursor: pointer;
 }
 

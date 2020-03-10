@@ -147,7 +147,7 @@
 
     &__text {
         width: 162px;
-        font-family: 'Nunito';
+        font-family: "Nunito";
         font-size: 18px;
         font-weight: 300;
         color: $content-font-color;
@@ -161,10 +161,80 @@
     }
 }
 
+.info {
+    width: 751px;
+    min-height: 503px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(124, 124, 124, 0.2);
 
+    &__form {
+        td {
+            width: 33%;
+        }
+    }
 
+    &__table {
+        width: 100%;
+    }
 
+    &__title {
+        @extend h2;
+        text-align: left;
+    }
 
+    &__row {
+        height: 48px;
+        width: 100px;
+
+        &:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+    }
+}
+
+.btn {
+    &--print {
+        @include sprite(24px, 22px, -5px, -286px);
+        filter: invert(0);
+    }
+
+    &--download {
+        @include sprite(24px, 22px, -5px, -213px);
+        filter: invert(0);
+    }
+
+    &--edit {
+        @include sprite(18px, 22px, -5px, -238px);
+        filter: invert(0);
+    }
+
+    &--add {
+        @include sprite(20px, 22px, -5px, -63px);
+        filter: invert(0);
+    }
+
+    &--cancel {
+        width: 83px;
+        height: 38px;
+        font-family: Arial;
+        font-size: 16px;
+        color: #2e2e2e;
+        border-radius: 1px;
+        border: 1px solid #2e2e2e;
+        background: none
+    }
+
+    &--save {
+        width: 106px;
+        height: 38px;
+        font-family: Arial;
+        font-size: 16px;
+        color: #ffffff;
+        border-radius: 1px;
+        background-color: #3d963c;
+    }
+}
 
 // .timeline {
 
