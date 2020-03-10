@@ -108,3 +108,22 @@ function showRemindersList() {
 }
 
 bell.textContent = reminderCount;
+
+
+
+const recentEventsInfo = document.getElementsByClassName('header__item--time')[0];
+const recentEventsHours = document.getElementsByClassName('header__item--hours')[0];
+const recentEventsDate = document.getElementsByClassName('header__item--date')[0];
+
+
+
+function updateTime() {
+    let today = new Date();
+    let recentSubmitDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    let recentSubmitTime = today.getHours() + ":" + today.getMinutes();
+
+    recentEventsHours.textContent = recentSubmitTime;
+    recentEventsDate.textContent = recentSubmitDate;
+}
+
+infoForm.addEventListener('submit', updateTime);
