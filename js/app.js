@@ -115,7 +115,7 @@ const recentEventsInfo = document.getElementsByClassName('header__item--time')[0
 const recentEventsHours = document.getElementsByClassName('header__item--hours')[0];
 const recentEventsDate = document.getElementsByClassName('header__item--date')[0];
 
-
+infoForm.addEventListener('submit', updateTime);
 
 function updateTime() {
     let today = new Date();
@@ -126,4 +126,12 @@ function updateTime() {
     recentEventsDate.textContent = recentSubmitDate;
 }
 
-infoForm.addEventListener('submit', updateTime);
+
+
+document.getElementsByClassName('btn--print')[0].addEventListener("click", function () {
+    var printContents = infoList.innerHTML;
+    var originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    window.print();
+    document.body.innerHTML = originalContents;
+});
