@@ -1,5 +1,7 @@
 'use strict';
 
+// APP FOR ASIDE, SUBHEADER AND BURGER BEHAVIOR
+
 const aside = document.getElementsByClassName('aside')[0];
 const subheader = document.getElementsByClassName('subheader')[0];
 const toggleAsideBtn = document.getElementsByClassName('header__item--show')[0];
@@ -9,6 +11,7 @@ const burger = document.getElementsByClassName('burger')[0];
 
 
 toggleAsideBtn.addEventListener('click', toggleAsideState);
+
 
 burger.addEventListener('mouseover', burgerHoverTriggerOn);
 aside.addEventListener('mouseleave', burgerHoverTriggerOff);
@@ -41,6 +44,7 @@ function burgerHoverTriggerOff() {
 }
 
 
+// APP FOR FORM BEHAVIOR
 
 
 const infoForm = document.getElementsByClassName('info__form')[0];
@@ -50,35 +54,76 @@ const titleInput = document.getElementsByClassName('input--title')[0];
 const textInput = document.getElementsByClassName('input--text')[0];
 
 const addInfoBtn = document.getElementsByClassName('btn--add')[0];
-const resetInfoBtn = document.getElementsByClassName('btn--cancel')[0];
+// const resetInfoBtn = document.getElementsByClassName('btn--cancel')[0];
 const saveInfoBtn = document.getElementsByClassName('btn--save')[0];
+
+const editInfoBtn = document.getElementsByClassName('btn--edit')[0];
 
 const template = document.getElementById('template').innerHTML;
 
 
-infoForm.addEventListener('submit', newInfoFormSubmit);
-addInfoBtn.addEventListener('click', showInput)
+addInfoBtn.addEventListener('click', showInput);
 
-function newInfoFormSubmit(e) {
-    e.preventDefault();
-    submitInfo();
+
+infoForm.addEventListener('submit', submitInfo);
+
+infoForm.addEventListener('click', addEditInfo);
+
+
+////
+
+function addEditInfo(event) {
+    let child = event.target.parentNode.children;
+
+    if ((event.target.classList.contains('template__title')) || (event.target.classList.contains('template__text'))) {
+        titleInput.value = child[0].innerHTML;
+        textInput.value = child[1].innerHTML;
+        submitEditInfo();
+    }
 }
+
+function submitEditInfo() {
+    infoList.addEventListener('click', findId);
+
+    function findId(event) {
+
+        saveInfoBtn.addEventListener('contextmenu', saveEditInfo)
+
+        let editRowID = event.target.parentNode.getAttribute('id');
+        let editRow = document.getElementById(editRowID);
+        console.log(editRow);
+
+        function saveEditInfo() {
+            editRow.children[0].textContent = titleInput.value;
+            editRow.children[1].textContent = textInput.value;
+        }
+    }
+}
+
+
+
 
 function showInput() {
     titleInput.classList.toggle('hide');
     textInput.classList.toggle('hide');
-    // resetInfoBtn.classList.toggle('hidden');
-    // saveInfoBtn.classList.toggle('hidden');
 }
 
+function submitInfo(e) {
+    e.preventDefault();
+    addInfo();
+}
 
-function submitInfo() {
+function addInfo() {
     let infoRow;
+
     infoRow = document.createElement('tr');
     infoRow.className = 'info__row';
+    infoRow.setAttribute('id', Math.random());
+
     infoRow.innerHTML = template
         .replace('{{title}}', titleInput.value || '-')
         .replace('{{text}}', textInput.value || '-');
+
     infoList.append(infoRow);
 
     resetInfoForm();
@@ -91,15 +136,47 @@ function resetInfoForm() {
 }
 
 
+const printBtn = document.getElementsByClassName('btn--print')[0];
+
+printBtn.addEventListener('click', printWindow);
+
+function printWindow() {
+    let printContents = infoList.innerHTML;
+    let originalContents = document.body.innerHTML;
+    document.body.innerHTML = printContents;
+    document.body.innerHTML = originalContents;
+    window.print();
+}
 
 
+const downloadBtn = document.getElementsByClassName('btn--download')[0];
+
+downloadBtn.addEventListener('click', downloadPDF);
+
+function downloadPDF() {
+    const element = document.getElementById('print');
+    html2pdf()
+        .from(element)
+        .save();
+}
+
+
+
+// APP FOR REMINDERS BEHAVIOR
 
 const reminders = document.getElementsByClassName('reminders')[0];
 const reminderCount = document.getElementsByClassName('reminders__raw').length;
 const notification = document.getElementsByClassName('header__item--notification')[0];
 const bell = document.getElementsByClassName('bell')[0];
 
+const recentEventsInfo = document.getElementsByClassName('header__item--time')[0];
+const recentEventsHours = document.getElementsByClassName('header__item--hours')[0];
+const recentEventsDate = document.getElementsByClassName('header__item--date')[0];
+
+
 notification.addEventListener('click', showRemindersList);
+infoForm.addEventListener('submit', updateTime);
+
 
 function showRemindersList() {
     reminders.classList.toggle('hidden');
@@ -110,28 +187,11 @@ function showRemindersList() {
 bell.textContent = reminderCount;
 
 
-
-const recentEventsInfo = document.getElementsByClassName('header__item--time')[0];
-const recentEventsHours = document.getElementsByClassName('header__item--hours')[0];
-const recentEventsDate = document.getElementsByClassName('header__item--date')[0];
-
-infoForm.addEventListener('submit', updateTime);
-
 function updateTime() {
     let today = new Date();
-    let recentSubmitDate = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    let recentSubmitDate = today.getFullYear() + '.' + (today.getMonth() + 1) + '.' + today.getDate();
     let recentSubmitTime = today.getHours() + ":" + today.getMinutes();
 
     recentEventsHours.textContent = recentSubmitTime;
     recentEventsDate.textContent = recentSubmitDate;
 }
-
-
-
-document.getElementsByClassName('btn--print')[0].addEventListener("click", function () {
-    var printContents = infoList.innerHTML;
-    var originalContents = document.body.innerHTML;
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
-});
