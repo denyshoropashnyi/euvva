@@ -93,13 +93,17 @@ function submitEditInfo() {
         let editRow = document.getElementById(editRowID);
         console.log(editRow);
 
+
         function saveEditInfo() {
-            editRow.children[0].textContent = titleInput.value;
-            editRow.children[1].textContent = textInput.value;
+            // editRow = document.getElementById(editRowID);
+            editRow.innerHTML = template
+                .replace('{{title}}', titleInput.value)
+                .replace('{{text}}', textInput.value);
         }
     }
 }
 
+////
 
 
 
